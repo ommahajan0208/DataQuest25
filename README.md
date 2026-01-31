@@ -4,7 +4,6 @@
 **Secured 3rd Place** 🎉 in DataQuest 2025, organized by Pulzion '25!
 
 ![3rd Place Achievement](./images/scoreboard.jpeg)
-*Proud to have achieved 3rd place in this competitive data science hackathon*
 
 ---
 
@@ -29,98 +28,78 @@ The competition involved predicting Air Quality Index (ASI) categories based on 
 ### Initial Exploration & Hyperparameter Tuning
 
 #### [main.ipynb](main.ipynb)
-- Initial data exploration and preprocessing
-- XGBoost baseline model implementation
-- Optuna-based hyperparameter optimization
-- Achieved best F1 Score: **0.9260** with optimized parameters
+- Data loading and exploration
+- XGBoost baseline implementation
+- Optuna hyperparameter optimization (30 trials)
+- Best F1 Score: **0.9260**
 
 #### [nb1.ipynb](nb1.ipynb)
-- Extended hyperparameter tuning for multiple algorithms
-- Comprehensive Optuna studies for:
+- Extended Optuna hyperparameter tuning for:
   - XGBoost
-  - LightGBM (with L1/L2 regularization)
+  - LightGBM
   - Random Forest
-- Stratified train-validation splits for robust evaluation
+- Stratified train-validation splits
 
 ### Feature Engineering Experiments
 
 #### [nb2.1.ipynb](nb2.1.ipynb)
-- Basic feature engineering with meteorological interactions
-- Feature selection using XGBoost importance
+- Feature engineering with meteorological interactions
+- Feature importance analysis using XGBoost
 - StandardScaler normalization
-- Model evaluation with tuned hyperparameters
+- Feature selection techniques
 
 #### [nb2.2.ipynb](nb2.2.ipynb)
-- **Advanced meteorological feature engineering**:
-  - Heat index and thermal comfort calculations
-  - Atmospheric stability indicators
-  - Wind shear and turbulence metrics
-  - Daylight and cloud interaction features
-  - Cyclic wind direction encoding
-  - Pressure trend analysis
-- Comprehensive feature importance analysis
-- Duplicate feature removal
+- Advanced meteorological feature engineering including:
+  - Temperature differentials and ratios
+  - Rainfall intensity calculations
+  - Wind gust ratios
+  - Pressure differences
+  - Humidity-based features
+  - Comprehensive interaction features
 
 #### [nb3.ipynb](nb3.ipynb)
-- Implementation of best tuned XGBoost parameters
-- Refined model training pipeline
-- Label encoding and stratified splitting
+- Data preprocessing and label encoding
+- Train-validation split (95-5)
+- Optuna hyperparameter optimization for XGBoost
 
-### Post-Competition Ensemble Methods
-
-#### [AfterPulzion.ipynb](AfterPulzion.ipynb)
-- **Soft Voting Ensemble** combining:
-  - XGBoost
-  - LightGBM (with early stopping)
-  - Random Forest
-- Individual model performance comparison
-- Ensemble prediction aggregation
-
-#### [AfterPulzion2.ipynb](AfterPulzion2.ipynb)
-- **Advanced ensemble techniques**:
-  - Memory-optimized data loading
-  - Calibrated classifiers using CalibratedClassifierCV
-  - Meta-stacking with Logistic Regression
-  - Weighted ensemble optimization via grid search
-  - Pseudo-labeling for semi-supervised learning
-  - Polynomial feature transformations
-
-#### [AfterPulzion_Exploratory.ipynb](AfterPulzion_Exploratory.ipynb)
-- **Comprehensive ensemble exploration**:
-  - Weighted blending with optimized weights
-  - Multi-level stacking architectures
-  - Bayesian model averaging
-  - Knowledge distillation techniques
-  - Neural network meta-learners
-  - Detailed F1 score tracking and comparison
-
-### Final Submission
+### Competition Submission
 
 #### [final.ipynb](final.ipynb)
-- **Production-ready pipeline**:
-  - Stratified K-Fold cross-validation
-  - Multi-algorithm ensemble:
-    - XGBoost with calibration
-    - LightGBM with early stopping
-    - **CatBoost** for categorical feature handling
-    - Gaussian Naive Bayes
-  - Isotonic regression for probability calibration
-  - Sample weighting for class balance
-  - Optimized hyperparameters from all experiments
-  - Final submission CSV generation
+- Stratified K-Fold cross-validation
+- Multi-model ensemble:
+  - XGBoost with optimized parameters
+  - LightGBM with early stopping
+  - CatBoost for categorical handling
+- Sample weighting for class balance
+- Isotonic regression calibration
+- Final submission CSV generation
 
 ---
 
-## Key Technologies & Libraries
+### Post-Competition Improvements
 
-- **Python 3.x**
-- **Pandas & NumPy** - Data manipulation
-- **Scikit-learn** - Model training, preprocessing, metrics
-- **XGBoost** - Gradient boosting
-- **LightGBM** - Fast gradient boosting
-- **CatBoost** - Categorical features handling
-- **Optuna** - Hyperparameter optimization
-- **Matplotlib** - Visualization
+*Further experimentation after the competition achieved even better results, surpassing the competition performance.*
+
+#### [AfterPulzion.ipynb](AfterPulzion.ipynb)
+- XGBoost, LightGBM, and Random Forest base models
+- Manual weighted soft voting ensemble
+- Grid search for optimal ensemble weights
+- Early stopping for gradient boosting models
+- **Results**: F1 Score **0.9424**, Accuracy **0.9576**
+
+#### [AfterPulzion2.ipynb](AfterPulzion2.ipynb)
+- Memory optimization for efficient data handling
+- XGBoost, LightGBM, and Random Forest training
+- Optimized hyperparameters for each model
+- Early stopping callbacks
+- **Results**: F1 Score **0.9401**, Accuracy **0.9562**
+
+#### [AfterPulzion_Exploratory.ipynb](AfterPulzion_Exploratory.ipynb)
+- Comprehensive ensemble method comparison
+- Weighted blending with grid search optimization
+- Base model training (XGBoost, LightGBM, Random Forest)
+- F1 score tracking across different techniques
+- Scipy-based optimization experiments
 
 ---
 
@@ -154,16 +133,6 @@ The competition involved predicting Air Quality Index (ASI) categories based on 
 
 ---
 
-## Results
-
-Successfully achieved **3rd place** in the competition with a strong macro F1 score through:
-- Iterative feature engineering
-- Extensive hyperparameter tuning
-- Multiple ensemble strategies
-- Rigorous cross-validation
-
----
-
 ## License
 
-This project is licensed under the terms specified in the [LICENSE](LICENSE) file.
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
